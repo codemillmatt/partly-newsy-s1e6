@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="PartlyNewsy.Core.HorizontalArticleTile"
+    HeightRequest="110">
+
+    <Frame
+        HasShadow="True"
+        CornerRadius="2"
+        Margin="5,5,2,10"
+        Padding="0">
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100" />
+            </Grid.RowDefinitions>
+
+            <Image BackgroundColor="Silver"
+                   VerticalOptions="Start"
+                   Source="{Binding FeaturedImage}"
+                   Aspect="AspectFill"
+                   MinimumHeightRequest="97"
+                   HeightRequest="97"
+                   Grid.RowSpan="3"
+                   Grid.Column="0" />
+
+            <Label Grid.Row="0"
+                   VerticalOptions="Start"
+                   Grid.Column="1"
+                   Margin="8">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="{Binding Category}"                              
+                              FontSize="10"
+                              TextColor="Black" />
+                        <Span Text="&#x000A;" />
+                        <Span Text="{Binding Headline}"                              
+                              FontSize="18"
+                              TextColor="Black"
+                              FontAttributes="Bold" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label Text="{Binding NewsProviderName}"                   
+                   VerticalOptions="End"
+                   Grid.Row="0"
+                   Grid.Column="1"
+                   Margin="8"
+                   FontSize="10"
+                   TextColor="Gray" />
+        </Grid>
+    </Frame>
+
+</ContentView>

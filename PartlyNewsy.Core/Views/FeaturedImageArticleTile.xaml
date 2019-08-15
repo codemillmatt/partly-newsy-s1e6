@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="PartlyNewsy.Core.FeaturedImageArticleTile">
+
+    <Frame    
+        Padding="0"
+        Margin="0,0,0,5"
+        CornerRadius="0"      
+        HasShadow="False">
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Image BackgroundColor="Black"                   
+                   Source="{Binding FeaturedImage}"
+                   Aspect="AspectFill"
+                   MinimumHeightRequest="240"
+                   HeightRequest="240"
+                   Grid.RowSpan="3"
+                   Grid.Row="0" />
+
+            <BoxView BackgroundColor="Black"
+                     Opacity="0.33"
+                     Grid.RowSpan="3"
+                     Grid.Row="0"
+                     HeightRequest="240"
+                     HorizontalOptions="Fill" />
+
+            <Label Grid.Row="1"
+                   Margin="8">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="{Binding Category}"                              
+                              FontSize="10"
+                              TextColor="White" />
+                        <Span Text="&#x000A;" />
+                        <Span Text="{Binding Headline}"                              
+                              FontSize="22"
+                              FontAttributes="Bold"
+                              TextColor="White" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <BoxView BackgroundColor="Black"                 
+                     Grid.Row="2"
+                     HorizontalOptions="Fill" />
+
+            <Label Text="{Binding NewsProviderName}"                                 
+                   Grid.Row="2"
+                   VerticalTextAlignment="Center"
+                   Margin="8"
+                   FontSize="10"
+                   TextColor="White" />
+
+        
+        </Grid>
+    </Frame>
+
+</ContentView>

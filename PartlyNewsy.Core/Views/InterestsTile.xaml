@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Frame
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:PartlyNewsy.Core"
+    x:Class="PartlyNewsy.Core.InterestsTile"
+    Padding="3"
+    CornerRadius="0"
+    HeightRequest="200">
+
+    <Frame.Resources>
+        <ResourceDictionary>
+            <local:BooltoObjectConverter x:Key="checkConverter" x:TypeArguments="x:String" TrueObject="&#xE73D;" FalseObject="" />
+        </ResourceDictionary>
+    </Frame.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="1*" />   
+        </Grid.RowDefinitions>
+
+        <Image Aspect="AspectFill"
+               Grid.RowSpan="3"
+               Source="{Binding BackgroundImageUrl}" />
+
+        <BoxView BackgroundColor="#000000"
+                 Opacity="0.5"
+                 Grid.RowSpan="3" />
+
+        <Label Grid.Row="0"
+               Margin="0,8,8,0"
+               FontFamily="{StaticResource FabMDL2}"
+                                 Text=""
+                                 FontSize="28"
+                                 TextColor="White"
+                     HorizontalOptions="End"/>
+
+        <Label Text="{Binding DisplayName}"               
+               Grid.Row="1"
+               VerticalOptions="Center"
+               HorizontalOptions="Center"
+               VerticalTextAlignment="Center"
+               HorizontalTextAlignment="Center"
+               TextColor="White"
+               FontSize="14"
+               FontAttributes="Bold"
+               />
+
+        <Label Grid.Row="2" 
+               FontFamily="{StaticResource FabMDL2}"
+               Text="{Binding IsFavorite, Converter={StaticResource checkConverter}}"
+               TextColor="#f2f2f2"
+               FontSize="32"
+               HorizontalOptions="End"
+               VerticalOptions="End" />
+           
+    </Grid>
+
+</Frame>

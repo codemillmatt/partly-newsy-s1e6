@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="PartlyNewsy.Core.SettingsPage"
+    BackgroundColor="#f2f2f2"
+    Shell.NavBarIsVisible="True">
+
+    <Shell.TitleView>
+        <StackLayout>
+            <Label Text="Settings"
+                   TextColor="#171717"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   Margin="-10,10,0,0"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center" />
+        </StackLayout>
+    </Shell.TitleView>
+
+    <ContentPage.Content>
+        <TableView Intent="Settings" HasUnevenRows="True">
+            <TableRoot>
+                <TableSection Title="ACCOUNT">
+                    <ViewCell Height="80" Tapped="HandleLogin_Tapped">
+                        <Grid Margin="10,0,0,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="4*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+
+                            <Image Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Margin="10">
+                                <Image.Source>
+                                    <FontImageSource FontFamily="{StaticResource SegMDL2}"
+                                        Glyph="&#xE77B;" Color="Black" />
+                                </Image.Source>
+                            </Image>
+
+                            <Label VerticalTextAlignment="Center" FontAttributes="Bold"
+                                Grid.Column="1" Grid.Row="0" Text="Sign in" FontSize="Header" />
+
+                            <Label Margin="0,-10,0,0" VerticalTextAlignment="Start" FontSize="Caption"
+                                Grid.Column="1" Grid.Row="1"
+                                Text="Signing in lets you sync your preferences and favorites across devices and helps us personalize your experience." />
+
+                        </Grid>
+                    </ViewCell>
+                </TableSection>
+                <TableSection Title="GENERAL">
+                    <ViewCell Height="40">
+                        <StackLayout Margin="20,0,10,0" Orientation="Horizontal">
+                            <Label FontFamily="{StaticResource SegMDL2}" Text="&#xE774;" VerticalTextAlignment="Center" FontSize="18" />
+                            <Label Text="Edition" FontSize="14" VerticalTextAlignment="Center" />
+                            <Label FontFamily="{StaticResource SegMDL2}" Text="&#xE76C;" VerticalTextAlignment="Center" HorizontalOptions="EndAndExpand" FontSize="18" />
+                        </StackLayout>
+                    </ViewCell>
+                    <ViewCell Height="40">
+                        <StackLayout Margin="20,0,10,0" Orientation="Horizontal">
+                            <Label FontFamily="{StaticResource SegMDL2}" Text="&#xE708;" VerticalTextAlignment="Center" FontSize="18" />
+                            <Label Text="Dark Mode" FontSize="14" VerticalTextAlignment="Center" />
+                            <Switch HorizontalOptions="EndAndExpand" VerticalOptions="Center" />
+                        </StackLayout>
+                    </ViewCell>
+                    <ViewCell Height="40">
+                        <StackLayout Margin="20,0,10,0" Orientation="Horizontal">
+                            <Label FontFamily="{StaticResource SegMDL2}" Text="&#xE728;" VerticalTextAlignment="Center" FontSize="18" />
+                            <Label Text="Saved Stories" FontSize="14" VerticalTextAlignment="Center" />
+                            <Label FontFamily="{StaticResource SegMDL2}" Text="&#xE76C;" VerticalTextAlignment="Center" HorizontalOptions="EndAndExpand" FontSize="18" />
+                        </StackLayout>
+                    </ViewCell>
+                    <ViewCell Height="40">
+                        <StackLayout Margin="20,0,10,0" Orientation="Horizontal">
+                            <Label FontFamily="{StaticResource SegMDL2}" Text="&#xE7E7;" VerticalTextAlignment="Center" FontSize="18" />
+                            <Label Text="Notifications" FontSize="14" VerticalTextAlignment="Center" />
+                            <Label FontFamily="{StaticResource SegMDL2}" Text="&#xE76C;" VerticalTextAlignment="Center" HorizontalOptions="EndAndExpand" FontSize="18" />
+                        </StackLayout>
+                    </ViewCell>
+                    <ViewCell Height="40">
+                        <StackLayout Margin="20,0,10,0" Orientation="Horizontal">
+                            <Label FontFamily="{StaticResource SegMDL2}" Text="&#xE946;" VerticalTextAlignment="Center" FontSize="18" />
+                            <Label Text="About" FontSize="14" VerticalTextAlignment="Center" />
+                            <Label FontFamily="{StaticResource SegMDL2}" Text="&#xE76C;" VerticalTextAlignment="Center" HorizontalOptions="EndAndExpand" FontSize="18" />
+                        </StackLayout>
+                    </ViewCell>
+                    <ViewCell Height="40">
+                        <StackLayout Margin="20,0,10,0" Orientation="Horizontal">
+                            <Label FontFamily="{StaticResource SegMDL2}" Text="&#xED15;" VerticalTextAlignment="Center" FontSize="18" />
+                            <Label Text="Send Feedback" FontSize="14" VerticalTextAlignment="Center" />
+                            <Label FontFamily="{StaticResource SegMDL2}" Text="&#xE76C;" VerticalTextAlignment="Center" HorizontalOptions="EndAndExpand" FontSize="18" />
+                        </StackLayout>
+                    </ViewCell>
+                </TableSection>
+                <TableSection Title="LAYOUT OPTIONS">
+                    <ViewCell Height="40">
+                        <StackLayout Margin="20,0,10,0" Orientation="Horizontal">
+                            <Label FontFamily="{StaticResource SegMDL2}" Text="&#xECA5;" VerticalTextAlignment="Center" FontSize="18" />
+                            <Label Text="Standard" FontSize="14" VerticalTextAlignment="Center" />
+                            <Label FontFamily="{StaticResource SegMDL2}" Text="&#xE73E;" VerticalTextAlignment="Center" HorizontalOptions="EndAndExpand" FontSize="18" TextColor="Red" />
+                        </StackLayout>
+                    </ViewCell>
+                    <ViewCell Height="40">
+                        <StackLayout Margin="20,0,10,0" Orientation="Horizontal">
+                            <Label FontFamily="{StaticResource SegMDL2}" Text="&#xE71D;" VerticalTextAlignment="Center" FontSize="18" />
+                            <Label Text="Compact" FontSize="14" VerticalTextAlignment="Center" />
+                            <Label FontFamily="{StaticResource SegMDL2}" Text="" VerticalTextAlignment="Center" HorizontalOptions="EndAndExpand" FontSize="18" TextColor="Red" />
+                        </StackLayout>
+                    </ViewCell>
+                    <ViewCell Height="40">
+                        <StackLayout Margin="20,0,10,0" Orientation="Horizontal">
+                            <Label FontFamily="{StaticResource SegMDL2}" Text="&#xEA37;" VerticalTextAlignment="Center" FontSize="18" />
+                            <Label Text="Text Only" FontSize="14" VerticalTextAlignment="Center" />
+                            <Label FontFamily="{StaticResource SegMDL2}" Text="" VerticalTextAlignment="Center" HorizontalOptions="EndAndExpand" FontSize="18" TextColor="Red" />
+                        </StackLayout>
+                    </ViewCell>
+                </TableSection>
+            </TableRoot>
+        </TableView>
+    </ContentPage.Content>
+</ContentPage>

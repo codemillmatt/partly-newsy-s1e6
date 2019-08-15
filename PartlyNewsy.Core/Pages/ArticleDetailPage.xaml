@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="PartlyNewsy.Core.ArticleDetailPage"
+    BackgroundColor="#f2f2f2"
+    Shell.NavBarIsVisible="True">
+
+    <Shell.BackButtonBehavior>
+        <BackButtonBehavior>
+            <BackButtonBehavior.IconOverride>
+                <FontImageSource FontFamily="{StaticResource FabMDL2}" Glyph="&#xE76B;" Size="20" />
+            </BackButtonBehavior.IconOverride>
+        </BackButtonBehavior>
+    </Shell.BackButtonBehavior>
+
+    <Shell.TitleView>
+        <StackLayout>
+            <Label Text="Partly Newsy"
+                   TextColor="#171717"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   Margin="-20,8,0,0"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"
+                   />
+        </StackLayout>
+    </Shell.TitleView>
+
+    <ContentPage.Content>
+        <WebView x:Name="theWebView"/>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Shell
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:PartlyNewsy.Core"
+    x:Class="PartlyNewsy.Core.AppShellPage"
+    Shell.TabBarTitleColor="Red">
+
+    <Shell.Resources>
+        <ResourceDictionary>
+            <Style x:Key="BaseStyle" TargetType="Element">
+                <Setter Property="Shell.BackgroundColor" Value="#F2F2F2" />
+                <Setter Property="Shell.ForegroundColor" Value="#171717" />
+                <Setter Property="Shell.TitleColor" Value="#171717" />
+                <Setter Property="Shell.DisabledColor" Value="#FFFFFF" />
+                <Setter Property="Shell.UnselectedColor" Value="Silver" />
+                <Setter Property="Shell.TabBarBackgroundColor" Value="#F2F2F2" />
+                <Setter Property="Shell.TabBarForegroundColor" Value="Red"/>
+                <Setter Property="Shell.TabBarUnselectedColor"
+                        Value="#A0A0A0"/>
+                <Setter Property="Shell.TabBarTitleColor" Value="Red"/>
+            </Style>
+            <Style TargetType="TabBar" BasedOn="{StaticResource BaseStyle}" />
+        </ResourceDictionary>
+    </Shell.Resources>
+
+    <TabBar>
+        <Tab Title="News" Shell.NavBarIsVisible="False">
+            <Tab.Icon>
+                <FontImageSource FontFamily="{StaticResource FabMDL2}" Glyph="&#xE900;" />
+            </Tab.Icon>
+            <ShellContent Title="My News">
+                <local:NewsCollectionPage />
+            </ShellContent>
+            <ShellContent Title="Top News">
+                <local:NewsCollectionPage />
+            </ShellContent>            
+        </Tab>
+        <Tab Title="My Interests">
+            <Tab.Icon>
+                <FontImageSource FontFamily="{StaticResource FabMDL2}" Glyph="&#xE734;" />
+            </Tab.Icon>
+            <ShellContent>
+                <local:MyInterestsPage />
+            </ShellContent>
+        </Tab>
+        <Tab Title="Search">
+            <Tab.Icon>
+                <FontImageSource FontFamily="{StaticResource FabMDL2}" Glyph="&#xE721;" />
+            </Tab.Icon>
+            <ShellContent>
+                <local:SearchPage />
+            </ShellContent>
+        </Tab>
+        <Tab Title="Local News">
+            <Tab.Icon>
+                <FontImageSource FontFamily="{StaticResource FabMDL2}" Glyph="&#xE707;" />
+            </Tab.Icon>
+            <ShellContent>
+                <local:NewsCollectionPage Shell.NavBarIsVisible="True" />
+            </ShellContent>
+        </Tab>
+        <Tab Title="Settings">
+            <Tab.Icon>
+                <FontImageSource FontFamily="{StaticResource FabMDL2}" Glyph="&#xE713;"/>
+            </Tab.Icon>
+            <ShellContent>
+                <local:SettingsPage />
+            </ShellContent>
+        </Tab>
+    </TabBar>
+
+</Shell>

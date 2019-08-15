@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:PartlyNewsy.Core"
+    x:Class="PartlyNewsy.Core.NewsCollectionPage"
+    BackgroundColor="#f2f2f2">
+
+    <Shell.TitleView>
+        <StackLayout>
+            <Label Text="Local News"
+                   TextColor="#171717"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   Margin="-10,14,0,0"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center" />
+        </StackLayout>
+    </Shell.TitleView>
+
+    <ContentPage.Resources>
+        <controls:FrontPageArticleSelector x:Key="ArticleSelector"/>
+    </ContentPage.Resources>
+    
+    <ContentPage.Content>
+
+        <CollectionView x:Name="newsList"
+            SelectionMode="Single"
+            SelectionChanged="newsListItemSelected"                        
+            ItemTemplate="{StaticResource ArticleSelector}">
+
+            <CollectionView.EmptyView>
+                <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                    <Label
+                        HorizontalOptions="CenterAndExpand"
+                        VerticalOptions="CenterAndExpand"
+                        HorizontalTextAlignment="Center"
+                        VerticalTextAlignment="Center"
+                        FontFamily="{StaticResource FabMDL2}"
+                        Text="&#xE900;"
+                        TextColor="Red"
+                        FontSize="64" />
+                </StackLayout>
+            </CollectionView.EmptyView>
+
+        </CollectionView>
+
+    </ContentPage.Content>
+</ContentPage>
