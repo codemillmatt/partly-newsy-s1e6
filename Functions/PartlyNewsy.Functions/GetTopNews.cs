@@ -36,6 +36,7 @@ namespace PartlyNewsy.Functions
 
                 var news = await newsClient.News.SearchAsync(query: "");
 
+                int counter = 0;
                 foreach (var item in news.Value)
                 {
                     var article = new PartlyNewsy.Models.Article {
@@ -45,8 +46,10 @@ namespace PartlyNewsy.Functions
                         FeaturedImage = item.Image.Thumbnail.ContentUrl,
                         Headline = item.Name,
                         NewsProviderImageUrl = item.Provider.First().Image.Thumbnail.ContentUrl,
-                        NewsProviderName = item.Provider.First().Name
+                        NewsProviderName = item.Provider.First().Name,
+                        CurrentArticleCount = counter
                     };
+                    counter += 1;
 
                     returnArticles.Add(article);
                 }
