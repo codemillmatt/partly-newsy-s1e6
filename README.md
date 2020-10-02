@@ -46,7 +46,7 @@ It'll look a little something like this.
 
 And of course that will be inside a `<CollectionView>` tag.
 
-Not content to stop there, the `CollectionView` also supports [selecting multiple items at once](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/collectionview/selection)!
+Not content to stop there, the `CollectionView` also supports [selecting multiple items at once](https://docs.microsoft.com/xamarin/xamarin-forms/user-interface/collectionview/selection?WT.mc_id=partlynewsys1e6-github-masoucou)!
 
 I bet you've already forgotten about the `ListView` haven't you?
 
