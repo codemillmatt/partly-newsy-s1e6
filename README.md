@@ -20,9 +20,9 @@ Ok ... so what's a `CollectionView`?
 
 The `CollectionView` picks up where the `ListView` left off in terms of functionality.
 
-In addition to displaying data in a vertical list, the `CollectionView` can also display data in a horizontal list. Or even a grid. [Check out this article](https://docs.microsoft.com/xamarin/xamarin-forms/user-interface/collectionview/layout?WT.mc_id=partlycloudy-github-masoucou) for more information on that.
+In addition to displaying data in a vertical list, the `CollectionView` can also display data in a horizontal list. Or even a grid. [Check out this article](https://docs.microsoft.com/xamarin/xamarin-forms/user-interface/collectionview/layout?WT.mc_id=mobile-0000-masoucou) for more information on that.
 
-The `CollectionView` doesn't stop there though. It also allows you to [specify a view to display when there is no data](https://docs.microsoft.com/xamarin/xamarin-forms/user-interface/collectionview/emptyview?WT.mc_id=partlycloudy-github-masoucou). So now it's super simple to display **There's Nothing To See Here** when there is, in fact, nothing to see here, instead of an empty list.
+The `CollectionView` doesn't stop there though. It also allows you to [specify a view to display when there is no data](https://docs.microsoft.com/xamarin/xamarin-forms/user-interface/collectionview/emptyview?WT.mc_id=mobile-0000-masoucou). So now it's super simple to display **There's Nothing To See Here** when there is, in fact, nothing to see here, instead of an empty list.
 
 And it's very easy to specify the empty view - just pop whatever you want to show up inside the `<CollectionView.EmptyView>` tags.
 
@@ -46,7 +46,7 @@ It'll look a little something like this.
 
 And of course that will be inside a `<CollectionView>` tag.
 
-Not content to stop there, the `CollectionView` also supports [selecting multiple items at once](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/collectionview/selection)!
+Not content to stop there, the `CollectionView` also supports [selecting multiple items at once](https://docs.microsoft.com/xamarin/xamarin-forms/user-interface/collectionview/selection?WT.mc_id=mobile-0000-masoucou)!
 
 I bet you've already forgotten about the `ListView` haven't you?
 
@@ -54,13 +54,13 @@ Those functionality areas are all fine and good - but the `CollectionView` keeps
 
 ## Tell Me More About Those ItemTemplates
 
-So, the `CollectionView` does not use cell's like the `ListView` does. It [relies on your providing your own `ContentView`s to display the data](https://docs.microsoft.com/xamarin/xamarin-forms/user-interface/collectionview/populate-data?WT.mc_id=partlycloudy-github-masoucou#define-item-appearance). And though this kind of sounds like a lot of work, it's not that far off from how the `ListView` works.
+So, the `CollectionView` does not use cell's like the `ListView` does. It [relies on your providing your own `ContentView`s to display the data](https://docs.microsoft.com/xamarin/xamarin-forms/user-interface/collectionview/populate-data?WT.mc_id=mobile-0000-masoucou#define-item-appearance). And though this kind of sounds like a lot of work, it's not that far off from how the `ListView` works.
 
 In this episode I skipped ahead and introduced a couple new views that displayed the news articles. `FeaturedImageArticleTile` and `HorizontalArticleTile`. Those are the views which get displayed in the `CollectionView`.
 
 You can set the `ItemTemplate` of the `CollectionView` to a view - which will display the data that you want. In this episode though - I'm setting that `ItemTemplate` to a `DataTemplateSelector`.
 
-The name of that `DataTemplateSelector` is `FrontPageArticleSelector`. [A `DataTemplateSelector`](https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/templates/data-templates/selector?WT.mc_id=partlycloudy-github-masoucou) selects which view to display based on the properties of the data the `CollectionView` is bound to.
+The name of that `DataTemplateSelector` is `FrontPageArticleSelector`. [A `DataTemplateSelector`](https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/templates/data-templates/selector?WT.mc_id=mobile-0000-masoucou) selects which view to display based on the properties of the data the `CollectionView` is bound to.
 
 And all that does is look at the incoming `Article` the `CollectionView` is bound to and check the `CurrentArticleCount` property. If the `CurrentArticleCount` is divisible by 4 - it returns the `FeaturedImageArticleTile`. Otherwise it returns the `HorizontalArticleTile`.
 
